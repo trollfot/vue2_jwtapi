@@ -43,8 +43,7 @@
           username: this.credentials.username,
           password: this.credentials.password
         }
-
-        auth.login_or_signup('login', this, credentials, 'secretquote')
+        auth.login(this, credentials, 'personal')
       }
     }
   }

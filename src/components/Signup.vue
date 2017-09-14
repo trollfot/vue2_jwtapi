@@ -53,7 +53,7 @@
 	  departments: this.signup_info.departments.split(',')
         }
 
-        auth.login_or_signup('signup', this, signup_info, 'list')
+        auth.signup(this, signup_info, 'list')
       }
     }
   }

@@ -29,7 +29,7 @@ export default {
   data() {
     return {
         filters: {
-          department: ''
+          department: null
         },
 	users: [],
 	error: ''
