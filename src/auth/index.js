@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const API_URL = 'http://localhost:7001/'
 const LOGIN_URL = API_URL + 'jwt/login'
-const SIGNUP_URL = API_URL + 'users/'
+const SIGNUP_URL = API_URL + 'users/signup'
 
 
 export default {

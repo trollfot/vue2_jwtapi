@@ -10,7 +10,7 @@
          type="text"
          class="form-control"
          placeholder="Enter your username"
-         v-model="credentials.username"
+         v-model="signup_info.username"
        >
      </div>
      <div class="form-group">
@@ -18,7 +18,15 @@
          type="password"
          class="form-control"
          placeholder="Enter your password"
-         v-model="credentials.password"
+         v-model="signup_info.password"
+       >
+     </div>
+     <div class="form-group">
+       <input
+         type="text"
+         class="form-control"
+         placeholder="List your departments, separated by a comma"
+         v-model="signup_info.departments"
        >
      </div>
      <button class="btn btn-primary" @click="submit()">Access</button>
@@ -30,7 +38,7 @@
   export default {
     data() {
       return {
-        credentials: {
+        signup_info: {
           username: '',
           password: ''
         },
@@ -39,12 +47,13 @@
     },
     methods: {
       submit() {
-        var credentials = {
-          username: this.credentials.username,
-          password: this.credentials.password
+        var signup_info = {
+          username: this.signup_info.username,
+          password: this.signup_info.password,
+	  departments: this.signup_info.departments.split(',')
         }
 
-        auth.login_or_signup('signup', this, credentials, 'secretquote')
+        auth.login_or_signup('signup', this, signup_info, 'list')
       }
     }
   }
